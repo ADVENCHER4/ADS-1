@@ -24,7 +24,7 @@ uint64_t nPrime(uint64_t n) {
             if (number % i == 0) {
                 isPrime = false;
                 break;
-            } 
+            }
         }
         if (isPrime) counter++;
     }
