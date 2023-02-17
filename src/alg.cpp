@@ -50,20 +50,10 @@ uint64_t nextPrime(uint64_t value) {
 }
 
 uint64_t sumPrime(uint64_t hbound) {
-    uint64_t sum = 0, number = 2;
-    uint64_t divider;
-    bool isPrime;
-    while (number < hbound) {
-        isPrime = true;
-        divider = number / 2;
-        for (int i = divider; i > 1; i--) {
-            if (number % i == 0) {
-                isPrime = false;
-                break;
-            }
-        }
-        if (isPrime) sum+=number;
-        number++;
+    if (hbound < 3) return 0;
+    uint64_t sum = 2;
+    for (uint64_t i = 3; i < hbound; i += 2) {
+        if (checkPrime(i))  sum += i;
     }
     return sum;
 }
